@@ -3,7 +3,7 @@
   "type": "library",
   "description": "Generátor PDF faktur",
   "homepage": "https://github.com/tady-eu/invoice-cz",
-  "license": "GPLv3",
+  "license": "MIT",
   "authors": [
     {
       "name": "Jaromír Navara",
