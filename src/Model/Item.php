@@ -1,6 +1,6 @@
 <?php
 
-namespace Cat\Invoice\Model;
+namespace TadyEu\Invoice\Model;
 
 class Item
 {

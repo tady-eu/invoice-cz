@@ -1,6 +1,6 @@
 <?php
 
-namespace Cat\Invoice;
+namespace TadyEu\Invoice;
 
 use Mpdf\Config\ConfigVariables;
 use Mpdf\Config\FontVariables;
@@ -11,7 +11,7 @@ use Twig\TwigFilter;
 
 /**
  * Class InvoiceGenerator
- * @package Cat\InvoiceGenerator
+ * @package TadyEu\InvoiceGenerator
  *
  * @require Mpdf (https://mpdf.github.io/)
  * @require QrPayment (https://github.com/RikudouSage/QrPaymentCZ)

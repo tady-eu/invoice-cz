@@ -1,13 +1,13 @@
 <?php
 
-namespace Cat\Invoice;
+namespace TadyEu\Invoice;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Twig\Environment;
 
 /**
  * Class InvoiceGeneratorFactory
- * @package Cat\Invoice
+ * @package TadyEu\Invoice
  * @require Mpdf
  */
 class InvoiceGeneratorFactory
@@ -19,9 +19,9 @@ class InvoiceGeneratorFactory
      * InvoiceFactory constructor.
      * @param ParameterBagInterface $parameterBag
      */
-    public function __construct(ParameterBagInterface $parameterBag)
+    public function __construct(string $tempDirPath)
     {
-        $this->tempDir = $parameterBag->get('kernel.cache_dir');
+        $this->tempDir = $tempDirPath;
     }
 
     /**

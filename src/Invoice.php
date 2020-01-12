@@ -1,13 +1,13 @@
 <?php
 
-namespace Cat\Invoice;
+namespace TadyEu\Invoice;
 
-use Cat\Invoice\Model\Company;
-use Cat\Invoice\Model\Item;
+use TadyEu\Invoice\Model\Company;
+use TadyEu\Invoice\Model\Item;
 
 /**
  * Class Invoice
- * @package Cat\Invoice
+ * @package TadyEu\Invoice
  * @require Mpdf
  */
 class Invoice
