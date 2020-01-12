@@ -1,0 +1,25 @@
+{
+  "name": "tady-eu/invoice-cz",
+  "type": "library",
+  "description": "Generátor PDF faktur",
+  "homepage": "https://github.com/tady-eu/invoice-cz",
+  "license": "GPLv3",
+  "authors": [
+    {
+      "name": "Jaromír Navara",
+      "homepage": "https://tady.eu",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "rikudou/czqrpayment": "^4.0",
+    "mpdf/mpdf": "^8.0",
+    "endroid/qr-code": "^3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cat\\Invoice\\": "src/"
+    }
+  }
+}
