@@ -15,13 +15,17 @@ class InvoiceGeneratorFactory
     /** @var string */
     protected $tempDir;
 
+    /** @var string */
+    protected $templateTwigFilePath;
+
     /**
      * InvoiceFactory constructor.
      * @param ParameterBagInterface $parameterBag
      */
-    public function __construct(string $tempDirPath)
+    public function __construct(string $tempDirPath, string $templateTwigFilePath = null)
     {
         $this->tempDir = $tempDirPath;
+        $this->templateTwigFilePath = $templateTwigFilePath;
     }
 
     /**
@@ -29,6 +33,10 @@ class InvoiceGeneratorFactory
      */
     public function create()
     {
-        return new InvoiceGenerator($this->tempDir);
+        $generator = new InvoiceGenerator($this->tempDir);
+        if($this->templateTwigFilePath){
+            $generator->setTemplateFile($this->templateTwigFilePath);
+        }
+        return $generator;
     }
 }
