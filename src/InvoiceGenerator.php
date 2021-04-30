@@ -160,6 +160,7 @@ class InvoiceGenerator
         $qrImage->setSize(1450);
 
         $data = [
+            'canceled' => $invoice->isCanceled(),
             'quantity' => $invoice->getItemsTotalQuantity(),
             'customer' => $invoice->getCustomer(),
             'supplier' => $invoice->getSupplier(),
