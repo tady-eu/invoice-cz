@@ -7,174 +7,195 @@ class Company
     /** @var string */
     protected $name;
 
-    /** @var string|null */
-    protected $ico, $dic;
+    /** @var null|string */
+    protected $ico;
+    protected $dic;
 
-    /** @var string|null */
-    protected $bankAccount, $iban, $swift;
+    /** @var null|string */
+    protected $bankAccount;
+    protected $iban;
+    protected $swift;
 
     /** @var string */
-    protected $city, $address, $postal;
+    protected $city;
+    protected $address;
+    protected $postal;
+    protected $country;
 
-    /**
-     * @return string
-     */
+    /** @var null|string */
+    protected $email;
+
+    /** @var null|string */
+    protected $logo;
+
+    /** @var null|string */
+    protected $url;
+
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     * @return Company
-     */
     public function setName(string $name): Company
     {
         $this->name = $name;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIco(): ?string
     {
         return $this->ico;
     }
 
-    /**
-     * @param string|null $ico
-     * @return Company
-     */
     public function setIco(?string $ico): Company
     {
         $this->ico = $ico;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDic(): ?string
     {
         return $this->dic;
     }
 
-    /**
-     * @param string|null $dic
-     * @return Company
-     */
     public function setDic(?string $dic): Company
     {
         $this->dic = $dic;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getBankAccount(): ?string
     {
         return $this->bankAccount;
     }
 
-    /**
-     * @param string|null $bankAccount
-     * @return Company
-     */
     public function setBankAccount(?string $bankAccount): Company
     {
         $this->bankAccount = $bankAccount;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getIban(): ?string
     {
         return $this->iban;
     }
 
-    /**
-     * @param string|null $iban
-     * @return Company
-     */
     public function setIban(?string $iban): Company
     {
         $this->iban = $iban;
+
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSwift(): ?string
     {
         return $this->swift;
     }
 
-    /**
-     * @param string|null $swift
-     * @return Company
-     */
     public function setSwift(?string $swift): Company
     {
         $this->swift = $swift;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getCity(): string
     {
         return $this->city;
     }
 
-    /**
-     * @param string $city
-     * @return Company
-     */
     public function setCity(string $city): Company
     {
         $this->city = $city;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getAddress(): string
     {
         return $this->address;
     }
 
-    /**
-     * @param string $address
-     * @return Company
-     */
     public function setAddress(string $address): Company
     {
         $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPostal(): string
+    {
+        return $this->postal;
+    }
+
+    public function setPostal(string $postal): Company
+    {
+        $this->postal = $postal;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(?string $email): Company
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @return self
+     */
+    public function setLogo(?string $logo)
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return self
+     */
+    public function setUrl(?string $url)
+    {
+        $this->url = $url;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getPostal(): string
+    public function getCountry(): ?string
     {
-        return $this->postal;
+        return $this->country;
     }
 
     /**
-     * @param string $postal
-     * @return Company
+     * @return self
      */
-    public function setPostal(string $postal): Company
+    public function setCountry(?string $country)
     {
-        $this->postal = $postal;
+        $this->country = $country;
+
         return $this;
     }
 }

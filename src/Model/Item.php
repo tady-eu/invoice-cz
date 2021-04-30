@@ -10,6 +10,9 @@ class Item
     /** @var string */
     protected $quantity = 1;
 
+    /** @var integer|null */
+    protected $amountPerItem;
+
     /** @var float */
     protected $amount;
 
@@ -40,7 +43,7 @@ class Item
     /**
      * @return string
      */
-    public function getQuantity(): string
+    public function getQuantity(): ?string
     {
         return $this->quantity;
     }
@@ -49,7 +52,7 @@ class Item
      * @param string $quantity
      * @return Item
      */
-    public function setQuantity(string $quantity): Item
+    public function setQuantity(?string $quantity): Item
     {
         $this->quantity = $quantity;
         return $this;
@@ -106,6 +109,24 @@ class Item
     public function setVatRate(?int $vatRate): Item
     {
         $this->vatRate = $vatRate;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getAmountPerItem(): ?int
+    {
+        return $this->amountPerItem;
+    }
+
+    /**
+     * @param int|null $amountPerItem
+     * @return Item
+     */
+    public function setAmountPerItem(?int $amountPerItem): Item
+    {
+        $this->amountPerItem = $amountPerItem;
         return $this;
     }
 }
