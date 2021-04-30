@@ -24,6 +24,9 @@ class Invoice
     /** @var string|null */
     protected $number, $vs;
 
+    /** @var boolean */
+    protected $canceled = false;
+
     /**
      * @return Company
      */
@@ -120,7 +123,7 @@ class Invoice
     public function getItemsPriceAmmountWithoutVat()
     {
         return array_reduce($this->items, function (float $carry, Item $item) {
-            return $carry + ($item->getAmountWithoutVat() * $item->getQuantity());
+            return $carry + ($item->getAmountWithoutVat());
         }, 0);
     }
 
@@ -130,21 +133,18 @@ class Invoice
     public function getItemsPriceAmmount()
     {
         return array_reduce($this->items, function (float $carry, Item $item) {
-            return $carry + ($item->getAmount() * $item->getQuantity());
+            return $carry + ($item->getAmount());
         }, 0);
     }
 
     /**
-     * @return bool
+     * @return int
      */
-    public function isVatPriced()
+    public function getItemsTotalQuantity()
     {
-        foreach ($this->items as $item) {
-            if ($item->getAmountWithoutVat() !== null) {
-                return true;
-            }
-        }
-        return false;
+        return array_reduce($this->items, function (float $carry, Item $item) {
+            return $carry + ($item->getQuantity());
+        }, 0);
     }
 
     /**
@@ -168,7 +168,7 @@ class Invoice
     /**
      * @return \DateTime
      */
-    public function getTaxAt(): \DateTime
+    public function getTaxAt(): ?\DateTime
     {
         return $this->taxAt;
     }
@@ -198,6 +198,24 @@ class Invoice
     public function setDueAt(\DateTime $dueAt): Invoice
     {
         $this->dueAt = $dueAt;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCanceled(): bool
+    {
+        return (bool)$this->canceled;
+    }
+
+    /**
+     * @param bool $canceled
+     * @return Invoice
+     */
+    public function setCanceled(bool $canceled): Invoice
+    {
+        $this->canceled = $canceled;
         return $this;
     }
 
